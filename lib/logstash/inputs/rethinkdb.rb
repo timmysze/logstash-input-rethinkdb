@@ -32,6 +32,9 @@ class LogStash::Inputs::RethinkDB < LogStash::Inputs::Base
   config :backfill, :default => true
   #ssl support
   config :ca_certs, :default => nil
+  # Credentials as of RethinkDB v2.3.x
+  config :user, :validate => :string, :default => "admin"
+  config :password, :validate => :string, :default => ""
 
 
   # Part of the logstash input interface
